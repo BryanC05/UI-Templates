@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen — Creative Developer Portfolio</title>
+    <meta name="description" content="Creative Developer specializing in secure web experiences at the intersection of design and engineering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <svg class="coffee-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <filter id="coffeeCloudWarp" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.032" numOctaves="4" seed="11" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="150" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+
+    <!-- Frosted Nav Bar -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">ALEX.CHEN</div>
+            <div class="nav-links">
+                <a href="#work" class="nav-link">WORK</a>
+                <a href="#projects" class="nav-link">PROJECTS</a>
+                <a href="#skills" class="nav-link">SKILLS</a>
+                <a href="#experience" class="nav-link">EXPERIENCE</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-filled">RESUME</a>
+                <a href="#contact" class="btn btn-filled">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-coffee-bg" aria-hidden="true">
+            <span class="coffee-sky"></span>
+            <span class="coffee-glow"></span>
+            <span class="coffee-clouds coffee-clouds-horizon"></span>
+            <span class="coffee-clouds coffee-clouds-left"></span>
+            <span class="coffee-clouds coffee-clouds-right"></span>
+            <span class="hero-coffee-grain"></span>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="coffee-cup" aria-hidden="true">
+            <canvas class="mug-canvas"></canvas>
+            <svg class="mug mug-fallback" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="mugBodyFill" gradientUnits="userSpaceOnUse" x1="112" y1="0" x2="308" y2="0">
+                        <stop offset="0" stop-color="#6f5539"/>
+                        <stop offset="0.025" stop-color="#8f7250"/>
+                        <stop offset="0.07" stop-color="#b3946e"/>
+                        <stop offset="0.13" stop-color="#d5bb98"/>
+                        <stop offset="0.21" stop-color="#eddbc0"/>
+                        <stop offset="0.29" stop-color="#f9efdd"/>
+                        <stop offset="0.36" stop-color="#fdf6e9"/>
+                        <stop offset="0.45" stop-color="#f7ecda"/>
+                        <stop offset="0.56" stop-color="#ecdcc4"/>
+                        <stop offset="0.67" stop-color="#ddc8ab"/>
+                        <stop offset="0.78" stop-color="#c9ac88"/>
+                        <stop offset="0.88" stop-color="#b0906a"/>
+                        <stop offset="0.94" stop-color="#c6a982"/>
+                        <stop offset="0.975" stop-color="#dfc8a6"/>
+                        <stop offset="1" stop-color="#6f5539"/>
+                    </linearGradient>
+
+                    <linearGradient id="mugBodyTone" gradientUnits="userSpaceOnUse" x1="0" y1="142" x2="0" y2="330">
+                        <stop offset="0" stop-color="#3a2410" stop-opacity="0.45"/>
+                        <stop offset="0.05" stop-color="#3a2410" stop-opacity="0.18"/>
+                        <stop offset="0.14" stop-color="#ffffff" stop-opacity="0.12"/>
+                        <stop offset="0.40" stop-color="#000000" stop-opacity="0"/>
+                        <stop offset="0.80" stop-color="#4a3018" stop-opacity="0.14"/>
+                        <stop offset="1" stop-color="#2a1809" stop-opacity="0.52"/>
+                    </linearGradient>
+
+                    <linearGradient id="mugRimFill" gradientUnits="userSpaceOnUse" x1="118" y1="122" x2="304" y2="180">
+                        <stop offset="0" stop-color="#fffdf8"/>
+                        <stop offset="0.28" stop-color="#f8ecdb"/>
+                        <stop offset="0.58" stop-color="#e8d2b3"/>
+                        <stop offset="0.82" stop-color="#cfb18a"/>
+                        <stop offset="1" stop-color="#a3835e"/>
+                    </linearGradient>
+
+                    <radialGradient id="mugCoffeeFill" gradientUnits="userSpaceOnUse" cx="188" cy="141" r="112">
+                        <stop offset="0" stop-color="#8f5327"/>
+                        <stop offset="0.20" stop-color="#6a3818"/>
+                        <stop offset="0.44" stop-color="#431f0c"/>
+                        <stop offset="0.72" stop-color="#251106"/>
+                        <stop offset="0.90" stop-color="#150902"/>
+                        <stop offset="1" stop-color="#0b0401"/>
+                    </radialGradient>
+
+                    <linearGradient id="mugHandleFill" gradientUnits="userSpaceOnUse" x1="286" y1="178" x2="372" y2="290">
+                        <stop offset="0" stop-color="#fdf5e7"/>
+                        <stop offset="0.20" stop-color="#f8ecda"/>
+                        <stop offset="0.42" stop-color="#ecdcc4"/>
+                        <stop offset="0.62" stop-color="#d9c1a0"/>
+                        <stop offset="0.80" stop-color="#b99a74"/>
+                        <stop offset="0.93" stop-color="#9a7a55"/>
+                        <stop offset="1" stop-color="#7c5f41"/>
+                    </linearGradient>
+
+                    <radialGradient id="saucerFill" gradientUnits="userSpaceOnUse" cx="210" cy="344" r="180">
+                        <stop offset="0" stop-color="#8a6c4c"/>
+                        <stop offset="0.24" stop-color="#a3835e"/>
+                        <stop offset="0.46" stop-color="#c9ab84"/>
+                        <stop offset="0.66" stop-color="#e9d7ba"/>
+                        <stop offset="0.82" stop-color="#dcc19e"/>
+                        <stop offset="0.94" stop-color="#ab8a61"/>
+                        <stop offset="1" stop-color="#5f4730"/>
+                    </radialGradient>
+
+                    <radialGradient id="saucerWell" gradientUnits="userSpaceOnUse" cx="210" cy="330" r="132">
+                        <stop offset="0" stop-color="#3f2c1b" stop-opacity="0.55"/>
+                        <stop offset="0.62" stop-color="#4f3924" stop-opacity="0.34"/>
+                        <stop offset="1" stop-color="#6b5238" stop-opacity="0"/>
+                    </radialGradient>
+
+                    <radialGradient id="mugContact" gradientUnits="userSpaceOnUse" cx="210" cy="322" r="112">
+                        <stop offset="0" stop-color="#0f0702" stop-opacity="0.95"/>
+                        <stop offset="0.42" stop-color="#1a0e05" stop-opacity="0.7"/>
+                        <stop offset="0.72" stop-color="#261708" stop-opacity="0.28"/>
+                        <stop offset="1" stop-color="#2b1a0a" stop-opacity="0"/>
+                    </radialGradient>
+
+                    <radialGradient id="mugFloorShadow" gradientUnits="userSpaceOnUse" cx="210" cy="358" r="200">
+                        <stop offset="0" stop-color="#000000" stop-opacity="0.75"/>
+                        <stop offset="0.48" stop-color="#000000" stop-opacity="0.36"/>
+                        <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+                    </radialGradient>
+
+                    <radialGradient id="coffeeGlow" gradientUnits="userSpaceOnUse" cx="192" cy="145" r="76">
+                        <stop offset="0" stop-color="#f0c79b" stop-opacity="0.15"/>
+                        <stop offset="1" stop-color="#f0c79b" stop-opacity="0"/>
+                    </radialGradient>
+
+                    <clipPath id="coffeeClip">
+                        <ellipse cx="210" cy="151" rx="84" ry="19.4"/>
+                    </clipPath>
+
+                    <clipPath id="bodyClip">
+                        <path d="M112,150 C110.5,208 111.5,264 117,304 C123,326 297,326 303,304 C308.5,264 309.5,208 308,150 Z"/>
+                    </clipPath>
+
+                    <clipPath id="saucerClip">
+                        <ellipse cx="210" cy="344" rx="176" ry="39"/>
+                    </clipPath>
+
+                    <filter id="mugGloss" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="9" result="soft"/>
+                        <feSpecularLighting in="soft" surfaceScale="4" specularConstant="0.5" specularExponent="18" lighting-color="#fff8ea" result="spec">
+                            <fePointLight x="30" y="20" z="320"/>
+                        </feSpecularLighting>
+                        <feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
+                        <feComposite in="SourceGraphic" in2="specIn" operator="arithmetic" k1="0" k2="1" k3="0.55" k4="0"/>
+                    </filter>
+
+                    <filter id="blur1" x="-30%" y="-30%" width="160%" height="160%">
+                        <feGaussianBlur stdDeviation="1.2"/>
+                    </filter>
+
+                    <filter id="blur3" x="-40%" y="-40%" width="180%" height="180%">
+                        <feGaussianBlur stdDeviation="3"/>
+                    </filter>
+
+                    <filter id="blur6" x="-40%" y="-40%" width="180%" height="180%">
+                        <feGaussianBlur stdDeviation="6"/>
+                    </filter>
+
+                    <filter id="blur14" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="14"/>
+                    </filter>
+
+                    <filter id="mugNoise" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.85 0.7" numOctaves="3" seed="11"/>
+                        <feColorMatrix type="saturate" values="0"/>
+                        <feComponentTransfer>
+                            <feFuncA type="table" tableValues="0 0.45"/>
+                        </feComponentTransfer>
+                    </filter>
+                </defs>
+
+                <ellipse cx="210" cy="360" rx="204" ry="46" fill="url(#mugFloorShadow)" filter="url(#blur14)"/>
+
+                <g class="saucer">
+                    <ellipse cx="210" cy="344" rx="176" ry="39" fill="url(#saucerFill)"/>
+                    <g clip-path="url(#saucerClip)">
+                        <ellipse cx="210" cy="330" rx="134" ry="28" fill="url(#saucerWell)"/>
+                        <ellipse cx="210" cy="329" rx="132" ry="27" fill="none" stroke="#f4e4cb" stroke-opacity="0.28" stroke-width="1.4" filter="url(#blur1)"/>
+                        <ellipse cx="210" cy="331" rx="118" ry="22" fill="none" stroke="#3a2716" stroke-opacity="0.30" stroke-width="2" filter="url(#blur3)"/>
+                        <ellipse cx="210" cy="366" rx="158" ry="17" fill="#2b1b0c" fill-opacity="0.42" filter="url(#blur14)"/>
+                        <ellipse cx="210" cy="356" rx="164" ry="24" fill="none" stroke="#fff3dd" stroke-opacity="0.20" stroke-width="3" filter="url(#blur6)"/>
+                        <ellipse cx="210" cy="372" rx="150" ry="10" fill="#fdf0da" fill-opacity="0.16" filter="url(#blur6)"/>
+                    </g>
+                </g>
+
+                <ellipse cx="210" cy="320" rx="104" ry="26" fill="url(#mugContact)" filter="url(#blur6)"/>
+
+                <g class="handle-back">
+                    <g>
+                        <ellipse cx="328" cy="232" rx="37" ry="46" fill="none" stroke="#4d3724" stroke-opacity="0.45" stroke-width="25" filter="url(#blur1)"/>
+                        <ellipse cx="328" cy="232" rx="37" ry="46" fill="none" stroke="url(#mugHandleFill)" stroke-width="22"/>
+                        <ellipse cx="324.5" cy="227.5" rx="37" ry="46" fill="none" stroke="#fffaf0" stroke-opacity="0.55" stroke-width="7" filter="url(#blur1)"/>
+                        <ellipse cx="332" cy="237" rx="37" ry="46" fill="none" stroke="#5f4630" stroke-opacity="0.45" stroke-width="6" filter="url(#blur3)"/>
+                    </g>
+                </g>
+
+                <g filter="url(#mugGloss)">
+                    <path d="M112,150 C110.5,208 111.5,264 117,304 C123,326 297,326 303,304 C308.5,264 309.5,208 308,150 Z" fill="url(#mugBodyFill)"/>
+                </g>
+
+                <path d="M112,150 C110.5,208 111.5,264 117,304 C123,326 297,326 303,304 C308.5,264 309.5,208 308,150 Z" fill="url(#mugBodyTone)"/>
+
+                <rect x="108" y="146" width="204" height="184" clip-path="url(#bodyClip)" filter="url(#mugNoise)" opacity="0.5" style="mix-blend-mode:soft-light"/>
+
+                <g clip-path="url(#bodyClip)">
+                    <ellipse cx="214" cy="332" rx="108" ry="24" fill="#1d1006" fill-opacity="0.45" filter="url(#blur14)"/>
+                    <ellipse cx="126" cy="214" rx="13" ry="54" fill="#fffaf0" fill-opacity="0.14" filter="url(#blur14)"/>
+                    <ellipse cx="300" cy="248" rx="8" ry="48" fill="#ffe9c9" fill-opacity="0.13" filter="url(#blur6)"/>
+                </g>
+
+                <ellipse cx="210" cy="150" rx="99" ry="27" fill="url(#mugRimFill)"/>
+                <ellipse cx="210" cy="150" rx="99" ry="27" fill="none" stroke="#54402a" stroke-opacity="0.45" stroke-width="1.2"/>
+                <path d="M111,150 A99,27 0 0 1 309,150" fill="none" stroke="#fffdf8" stroke-opacity="0.72" stroke-width="2" filter="url(#blur1)"/>
+
+                <g clip-path="url(#coffeeClip)">
+                    <ellipse cx="210" cy="151" rx="84" ry="19.4" fill="url(#mugCoffeeFill)"/>
+                    <ellipse cx="192" cy="146" rx="70" ry="16" fill="url(#coffeeGlow)"/>
+                    <g transform="translate(210 151) scale(1 0.231)">
+                        <g class="crema-spin">
+                            <circle cx="0" cy="0" r="86" fill="none" stroke="#d2a068" stroke-opacity="0.34" stroke-width="9" filter="url(#blur1)"/>
+                            <circle cx="0" cy="0" r="72" fill="none" stroke="#b9804c" stroke-opacity="0.28" stroke-width="26"/>
+                            <circle cx="0" cy="0" r="52" fill="none" stroke="#d9a76b" stroke-opacity="0.20" stroke-width="16" stroke-dasharray="52 34"/>
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#e3b981" stroke-opacity="0.16" stroke-width="13" stroke-dasharray="34 26"/>
+                            <ellipse cx="-22" cy="-16" rx="28" ry="24" fill="#c98f57" fill-opacity="0.15"/>
+                            <ellipse cx="30" cy="20" rx="22" ry="18" fill="#b87f4a" fill-opacity="0.09"/>
+                        </g>
+                    </g>
+                    <ellipse cx="180" cy="144" rx="38" ry="7.5" fill="#fff6e8" fill-opacity="0.16" filter="url(#blur3)"/>
+                    <path d="M126,151 A84,19.4 0 0 1 294,151" fill="none" stroke="#080300" stroke-opacity="0.55" stroke-width="8" filter="url(#blur3)"/>
+                </g>
+
+                <ellipse cx="210" cy="151" rx="84" ry="19.4" fill="none" stroke="#2e1b0b" stroke-opacity="0.5" stroke-width="2" filter="url(#blur1)"/>
+                <path d="M126,151 A84,19.4 0 0 1 294,151" fill="none" stroke="#fffdf6" stroke-opacity="0.22" stroke-width="1.4"/>
+
+                <g class="handle-front">
+                    <g>
+                        <ellipse cx="328" cy="232" rx="37" ry="46" fill="none" stroke="#4d3724" stroke-opacity="0.45" stroke-width="25" filter="url(#blur1)"/>
+                        <ellipse cx="328" cy="232" rx="37" ry="46" fill="none" stroke="url(#mugHandleFill)" stroke-width="22"/>
+                        <ellipse cx="324.5" cy="227.5" rx="37" ry="46" fill="none" stroke="#fffaf0" stroke-opacity="0.55" stroke-width="7" filter="url(#blur1)"/>
+                        <ellipse cx="332" cy="237" rx="37" ry="46" fill="none" stroke="#5f4630" stroke-opacity="0.45" stroke-width="6" filter="url(#blur3)"/>
+                    </g>
+                    <ellipse cx="294" cy="203" rx="11" ry="16" fill="#2b1a0a" fill-opacity="0.5" filter="url(#blur6)"/>
+                    <ellipse cx="294" cy="262" rx="11" ry="16" fill="#2b1a0a" fill-opacity="0.45" filter="url(#blur6)"/>
+                </g>
+            </svg>
+            <span class="cup-steam cup-steam-1"></span>
+            <span class="cup-steam cup-steam-2"></span>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-line">
+                        <span class="hero-italic">Your new</span>
+                    </div>
+                    <div class="hero-line">
+                        <span class="hero-main">Creative Developer</span>
+                    </div>
+                    <div class="hero-line">
+                        <span class="hero-italic">with AI DLP</span>
+                    </div>
+                    <p class="hero-subhead">
+                        Building secure, elegant web experiences at the intersection of design and engineering.
+                    </p>
+                </div>
+            </div>
+            <div class="hero-card-container">
+                <div class="boarding-pass-card">
+                    <div class="boarding-pass-header">
+                        <span class="boarding-pass-icon">✈</span>
+                        <span class="boarding-pass-label">BOARDING PASS</span>
+                    </div>
+                    <div class="boarding-pass-route">
+                        <span>LEGACY</span>
+                        <span class="route-arrow">→</span>
+                        <span>DS</span>
+                    </div>
+                    <h3 class="boarding-pass-title">Deploys on device in minutes</h3>
+                    <div class="boarding-pass-actions">
+                        <button class="btn-pill">
+                            <span class="btn-pill-icon">G</span>
+                            Try now with Google
+                        </button>
+                        <button class="btn-pill">
+                            <span class="btn-pill-icon">M</span>
+                            Try now with Microsoft
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Work Section -->
+    <section id="work" class="section">
+        <div class="container">
+            <div class="section-stamp">W O R K</div>
+            <div class="feature-rows">
+                <div class="feature-row">
+                    <a href="#" class="feature-link">01</a>
+                    <p class="feature-desc">Secure Web Gateway with AI-powered data loss prevention</p>
+                </div>
+                <div class="feature-row-divider"></div>
+                <div class="feature-row">
+                    <a href="#" class="feature-link">02</a>
+                    <p class="feature-desc">Real-time threat detection and zero-trust architecture</p>
+                </div>
+                <div class="feature-row-divider"></div>
+                <div class="feature-row">
+                    <a href="#" class="feature-link">03</a>
+                    <p class="feature-desc">End-to-end encryption for modern cloud infrastructure</p>
+                </div>
+                <div class="feature-row-divider"></div>
+                <div class="feature-row">
+                    <a href="#" class="feature-link">04</a>
+                    <p class="feature-desc">Edge computing solutions with global CDN optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-stamp">A B O U T</div>
+            <div class="about-content">
+                <p class="about-text">
+                    I'm a creative developer with a passion for building interfaces that feel both futuristic and timeless. 
+                    My work bridges the gap between technical precision and human-centered design. I specialize in creating
+                    secure, performant web applications with a focus on exceptional user experiences.
+                </p>
+                <div class="about-grid">
+                    <div class="about-info">
+                        <div class="about-item">
+                            <span class="about-label">LOCATION</span>
+                            <span class="about-value">San Francisco, CA</span>
+                        </div>
+                        <div class="about-item">
+                            <span class="about-label">FOCUS</span>
+                            <span class="about-value">Frontend • Security • UX</span>
+                        </div>
+                        <div class="about-item">
+                            <span class="about-label">STATUS</span>
+                            <span class="about-value">Available for Freelance</span>
+                        </div>
+                    </div>
+                    <div class="violet-bloom-card">
+                        <h3 class="violet-bloom-title">dope.swg</h3>
+                        <p class="violet-bloom-desc">See how in 140s</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-stamp">C O M P A R I S O N</div>
+            <div class="comparison-grid">
+                <div class="comparison-card comparison-card-1">
+                    <div class="comparison-number">01</div>
+                    <div class="comparison-label">COMPLEX 15-STEP CONFIGURATION</div>
+                    <a href="#" class="comparison-link">vs. Competitor →</a>
+                </div>
+                <div class="comparison-connector">
+                    <div class="comparison-line"></div>
+                    <div class="comparison-dot"></div>
+                </div>
+                <div class="comparison-card comparison-card-2">
+                    <div class="comparison-number">02</div>
+                    <div class="comparison-label">MANUAL POLICY UPDATES</div>
+                    <a href="#" class="comparison-link">vs. Competitor →</a>
+                </div>
+                <div class="comparison-connector">
+                    <div class="comparison-line"></div>
+                    <div class="comparison-dot"></div>
+                </div>
+                <div class="comparison-card comparison-card-3">
+                    <div class="comparison-number">03</div>
+                    <div class="comparison-label">LIMITED VISIBILITY</div>
+                    <a href="#" class="comparison-link">vs. Competitor →</a>
+                </div>
+                <div class="comparison-connector">
+                    <div class="comparison-line"></div>
+                    <div class="comparison-dot"></div>
+                </div>
+                <div class="comparison-card comparison-card-4">
+                    <div class="comparison-number">04</div>
+                    <div class="comparison-label">SLOW DEPLOYMENT</div>
+                    <a href="#" class="comparison-link">vs. Competitor →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-stamp">P R O J E C T S</div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-number">01</span>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <h3 class="project-title">NEXUS SECURITY DASHBOARD</h3>
+                    <p class="project-description">
+                        Real-time security monitoring dashboard with AI-powered threat detection, 
+                        interactive data visualizations, and zero-trust access controls.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">REACT</span>
+                        <span class="project-tag">TYPESCRIPT</span>
+                        <span class="project-tag">D3.JS</span>
+                        <span class="project-tag">WEBGL</span>
+                    </div>
+                    <a href="#" class="project-link">VIEW PROJECT →</a>
+                </article>
+                
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-number">02</span>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <h3 class="project-title">QUANTUM INTERFACE</h3>
+                    <p class="project-description">
+                        Futuristic web interface exploring quantum computing concepts with 
+                        immersive animations and experimental UI patterns.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">NEXT.JS</span>
+                        <span class="project-tag">THREE.JS</span>
+                        <span class="project-tag">GLSL</span>
+                        <span class="project-tag">GSAP</span>
+                    </div>
+                    <a href="#" class="project-link">VIEW PROJECT →</a>
+                </article>
+                
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-number">03</span>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <h3 class="project-title">CIPHER ENCRYPTION TOOL</h3>
+                    <p class="project-description">
+                        Client-side encryption tool with military-grade algorithms, 
+                        secure key generation, and zero-knowledge architecture.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">VUE.JS</span>
+                        <span class="project-tag">CRYPTO.JS</span>
+                        <span class="project-tag">WEB CRYPTO API</span>
+                        <span class="project-tag">PWA</span>
+                    </div>
+                    <a href="#" class="project-link">VIEW PROJECT →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-stamp">S K I L L S</div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">FRONTEND</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">React / Next.js</span>
+                        <span class="skill-item">TypeScript</span>
+                        <span class="skill-item">Vue.js / Nuxt</span>
+                        <span class="skill-item">Three.js / WebGL</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">BACKEND</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Node.js / Express</span>
+                        <span class="skill-item">Python / FastAPI</span>
+                        <span class="skill-item">GraphQL / REST</span>
+                        <span class="skill-item">PostgreSQL / MongoDB</span>
+                        <span class="skill-item">Redis / Caching</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">SECURITY & DEVOPS</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Web Security / OWASP</span>
+                        <span class="skill-item">Cryptography</span>
+                        <span class="skill-item">Docker / Kubernetes</span>
+                        <span class="skill-item">AWS / Vercel</span>
+                        <span class="skill-item">CI/CD Pipelines</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-stamp">E X P E R I E N C E</div>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-company-info">
+                            <h3 class="experience-company">DOPE.SECURITY</h3>
+                            <span class="experience-role">Senior Creative Developer</span>
+                        </div>
+                        <span class="experience-period">2023 — PRESENT</span>
+                    </div>
+                    <p class="experience-description">
+                        Leading frontend architecture for secure web gateway solutions. Building immersive 
+                        dashboards with real-time threat visualization and AI-powered security features.
+                    </p>
+                    <div class="experience-achievements">
+                        <span class="achievement">• Reduced load times by 65%</span>
+                        <span class="achievement">• Led redesign of core dashboard</span>
+                        <span class="achievement">• Implemented zero-trust UI patterns</span>
+                    </div>
+                </div>
+                <div class="experience-divider"></div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-company-info">
+                            <h3 class="experience-company">CYBERDYNAMICS</h3>
+                            <span class="experience-role">Frontend Engineer</span>
+                        </div>
+                        <span class="experience-period">2021 — 2023</span>
+                    </div>
+                    <p class="experience-description">
+                        Developed security-focused web applications for enterprise clients. Focused on 
+                        encryption tools, secure authentication flows, and threat intelligence platforms.
+                    </p>
+                    <div class="experience-achievements">
+                        <span class="achievement">• Built end-to-end encryption suite</span>
+                        <span class="achievement">• Scaled to 100K+ daily users</span>
+                        <span class="achievement">• SOC 2 compliance implementation</span>
+                    </div>
+                </div>
+                <div class="experience-divider"></div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="experience-company-info">
+                            <h3 class="experience-company">DIGITAL FORGE</h3>
+                            <span class="experience-role">Creative Developer</span>
+                        </div>
+                        <span class="experience-period">2019 — 2021</span>
+                    </div>
+                    <p class="experience-description">
+                        Created interactive web experiences for tech startups. Specialized in experimental 
+                        animations, WebGL visualizations, and cutting-edge UI implementations.
+                    </p>
+                    <div class="experience-achievements">
+                        <span class="achievement">• Awwwards Site of the Day</span>
+                        <span class="achievement">• 15+ award-winning projects</span>
+                        <span class="achievement">• Open source contributions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-stamp">C O N T A C T</div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p class="contact-text">
+                        Have a project in mind? Let's build something extraordinary together.
+                        I'm always open to discussing new opportunities and creative collaborations.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:alex@alexchen.dev" class="contact-link">
+                            <span class="contact-link-label">EMAIL</span>
+                            <span class="contact-link-value">alex@alexchen.dev</span>
+                        </a>
+                        <a href="https://github.com" class="contact-link">
+                            <span class="contact-link-label">GITHUB</span>
+                            <span class="contact-link-value">@alexchen</span>
+                        </a>
+                        <a href="https://linkedin.com" class="contact-link">
+                            <span class="contact-link-label">LINKEDIN</span>
+                            <span class="contact-link-value">in/alexchen</span>
+                        </a>
+                        <a href="https://twitter.com" class="contact-link">
+                            <span class="contact-link-label">TWITTER</span>
+                            <span class="contact-link-value">@alexchen_dev</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <div class="violet-bloom-card contact-card">
+                        <h3 class="violet-bloom-title">START A PROJECT</h3>
+                        <p class="violet-bloom-desc">Let's create something amazing</p>
+                        <button class="btn-pill contact-pill">GET IN TOUCH →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span class="footer-icon">+</span>
+                <span class="footer-label">Fly Direct</span>
+                <span class="footer-separator">•</span>
+                <span class="footer-label">Secure Web Gateway</span>
+                <span class="footer-separator">•</span>
+                <span class="footer-label">© 2024 Alex Chen</span>
+            </div>
+            <div class="footer-right">
+                <span class="footer-coords" id="coords">40.7128° N, 74.0060° W</span>
+                <span class="footer-heart">♥</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="mug.js"></script>
+</body>
+</html>
